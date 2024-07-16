@@ -2,9 +2,9 @@ import moment from 'moment';
 
 const useGeneratePrevMonths = (filter?: string) => {
   const today = new Date();
-  const previousMonth = new Date(
+  const recentMonth = new Date(
     today.getFullYear(),
-    today.getMonth() - 1,
+    today.getMonth(),
     today.getDate(),
   );
 
@@ -26,15 +26,15 @@ const useGeneratePrevMonths = (filter?: string) => {
 
   for (let i = 0; i < daysInPreviousMonth; i++) {
     const date = new Date(
-      previousMonth.getFullYear(),
-      previousMonth.getMonth(),
-      i + today.getDate(),
+      recentMonth.getFullYear(),
+      recentMonth.getMonth(),
+      today.getDate() - i,
     );
     // const splitDate = moment(date).format('LL').split(',')[0];
     dates.push(moment(date).format('LL'));
   }
 
-  return dates;
+  return dates.reverse();
 };
 
 export default useGeneratePrevMonths;
