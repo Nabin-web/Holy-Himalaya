@@ -6,7 +6,7 @@ const RoomData = [
   { title: 'Cleaning', number: '40' },
   { title: 'Occupied', number: '20' },
 ];
-const MealPlanData = [{ title: 'BB', number: '12' }];
+const MealPlanData = [{ title: 'BBC', number: '12' }];
 
 const ECommerce: React.FC = () => {
   return (
